@@ -1,0 +1,48 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --font-display: "Space Grotesk", sans-serif;
+  --font-body: "Inter", sans-serif;
+  --font-mono: "IBM Plex Mono", monospace;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #FBFAF6;
+  color: #16221B;
+}
+
+/* Visible keyboard focus everywhere, on top of Tailwind's utility resets */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+  outline: 2px solid #2F6F4F;
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Sticky-note tilt used sparingly in the Beginner's Corner — the site's one signature flourish */
+.sticky-tilt:nth-child(odd) {
+  transform: rotate(-1.2deg);
+}
+.sticky-tilt:nth-child(even) {
+  transform: rotate(1.2deg);
+}
+.sticky-tilt:hover {
+  transform: rotate(0deg) translateY(-2px);
+}
